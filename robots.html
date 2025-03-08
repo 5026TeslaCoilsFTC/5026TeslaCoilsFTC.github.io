@@ -7,90 +7,171 @@
     <title>5026 Tesla Coils - Robots</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Sidebar Navigation */
+        body {
+            color: white;
+            background-color: black;
+            font-family: 'BatmanForever', sans-serif;
+        }
+        h1, h2, p {
+            color: white;
+        }
+
         .sidebar {
             height: 100vh;
             width: 250px;
             position: fixed;
             top: 0;
-            left: 0;
+            left: -250px;
             background: #333;
             padding-top: 60px;
+            transition: 0.3s;
             z-index: 1000;
-            color: white;
         }
+
         .sidebar a {
             display: block;
             padding: 15px;
             text-decoration: none;
             color: white;
             font-size: 18px;
+            transition: 0.3s;
         }
-        .sidebar a:hover {
+
+        .sidebar a:hover, .sidebar a.active {
             background: #575757;
+            background-color: green;
         }
 
-        body {
-            color: white;
-            background-color: black;
-            padding-left: 260px;
-            margin: 0;
+        .menu-toggle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            cursor: pointer;
+            z-index: 100;
+            transition: 0.3s;
         }
 
-        h1, h2, p {
-            color: white;
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background: white;
+            margin: 5px;
+            transition: 0.3s;
+            border-radius: 5px;
         }
 
-        .robot {
-            margin: 20px 0;
+        .menu-toggle.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .robot img {
+            width: 100%;
         }
 
         footer {
             background-color: #333;
             color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 20px;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
-
-    <!-- Sidebar Navigation -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
     <nav class="sidebar" id="sidebar">
-        <a href="Sponsors.html">Sponsors</a>
-        <a href="Meet_the_Team.html">Meet the Team</a>
-        <a href="Find_Local_Teams.html">Find Local Teams</a>
-        <a href="History.html">History</a>
-        <a href="Seasons.html">Seasons</a>
-        <a href="Robots.html">Robots</a>
-        <a href="Contact.html">Contact</a>
+        <a href="Sponsors.html" id="sponsors">Sponsors</a>
+        <a href="Meet_the_Team.html" id="meet">Meet the Team</a>
+        <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
+        <a href="History.html" id="history">History</a>
+        <a href="Seasons.html" id="seasons">Seasons</a>
+        <a href="robots.html" id="robots" class="active">Robots</a>
+        <a href="Contact.html" id="contact">Contact</a>
     </nav>
+    
+    <h1>Our Robots</h1>
 
-    <div class="content">
-        <h1>Our Robots</h1>
+    <div class="robot">
+        <h2>Mis Abyss (2023-2024)</h2>
+        <img src="path_to_image.jpg" alt="Mis Abyss">
+        <p>Mis. Fortune is the 2023-2024 Centerstage Robot. During the season, she went 5-0-0 at Idaho State and placed 26th at the World Championship in the Franklin Division.</p>
+    </div>
 
-        <div class="robot">
-            <h2>Mis Abyss (2023-2024)</h2>
-            <img src="path_to_image.jpg" alt="Mis Abyss">
-            <p>Mis. Fortune is the 2023-2024 Centerstage Robot...</p>
-        </div>
+    <div class="robot">
+        <h2>Mark V - Mis Conduct (2022-2023)</h2>
+        <img src="path_to_image.jpg" alt="Mis Conduct">
+        <p>Mis. Conduct was the Powerplay Robot in 2022-2023, helping us qualify for the World Championship and place 35th in the Ochoa Division.</p>
+    </div>
 
-        <div class="robot">
-            <h2>Mark V - Mis Conduct (2022-2023)</h2>
-            <img src="path_to_image.jpg" alt="Mis Conduct">
-            <p>Mis. Conduct was the Powerplay Robot...</p>
-        </div>
+    <div class="robot">
+        <h2>Forvo Jr. (2021-2022)</h2>
+        <img src="path_to_image.jpg" alt="Forvo Jr.">
+        <p>Forvo Jr. was named after our FLL Challenge team’s robot, built for the Freight Frenzy season.</p>
+    </div>
 
-        <!-- Add the rest of the robots similarly -->
+    <div class="robot">
+        <h2>Scooter (2020-2021)</h2>
+        <img src="path_to_image.jpg" alt="Scooter">
+        <p>Scooter was our Ultimate Goal robot, featuring quick movements and strong scoring potential.</p>
+    </div>
 
+    <div class="robot">
+        <h2>Patricia (2019-2020)</h2>
+        <img src="path_to_image.jpg" alt="Patricia">
+        <p>Patricia was the Skystone robot, capable of efficient building and scoring strategies during the season.</p>
+    </div>
+
+    <div class="robot">
+        <h2>Mark IV - The Fortissimo</h2>
+        <img src="path_to_image.jpg" alt="Mark IV">
+        <p>Mark IV was an important milestone in our team's robot development, featuring cutting-edge design.</p>
+    </div>
+
+    <div class="robot">
+        <h2>Mark III</h2>
+        <img src="path_to_image.jpg" alt="Mark III">
+        <p>Mark III reached the 2013-2014 World Championship, finishing 3rd place and scoring high with its strong mechanisms.</p>
+    </div>
+
+    <div class="robot">
+        <h2>Brock</h2>
+        <img src="path_to_image.jpg" alt="Brock">
+        <p>Brock was a standout with its omni-directional drive and versatility in defense, reaching 9th place at the 2012-2013 World Championship.</p>
+    </div>
+
+    <div class="robot">
+        <h2>Miss Coils</h2>
+        <img src="path_to_image.jpg" alt="Miss Coils">
+        <p>Miss Coils was our first robot, capable of picking up balls and navigating the ramp efficiently. She placed 11th at the 2011-2012 World Championship.</p>
     </div>
 
     <footer>
         <p>&copy; 2024 5026 Tesla Coils. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            const menuButton = document.querySelector('.menu-toggle');
+            menuButton.classList.toggle('spin');
+            menuButton.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
