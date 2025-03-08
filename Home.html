@@ -64,8 +64,9 @@
             transition: 0.3s;
         }
 
-        .sidebar a:hover {
+        .sidebar a:hover, .sidebar a.active {
             background: #575757;
+            background-color: green;
         }
 
         .menu-toggle {
@@ -159,13 +160,13 @@
     </div>
     
     <nav class="sidebar" id="sidebar">
-        <a href="Sponsors.html">Sponsors</a>
-        <a href="Meet_the_Team.html">Meet the Team</a>
-        <a href="Find_Local_Teams.html">Find Local Teams</a>
-        <a href="History.html">History</a>
-        <a href="Seasons.html">Seasons</a>
-        <a href="robots.html">Robots</a>
-        <a href="Contact.html">Contact</a>
+        <a href="Sponsors.html" id="sponsors">Sponsors</a>
+        <a href="Meet_the_Team.html" id="meet">Meet the Team</a>
+        <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
+        <a href="History.html" id="history">History</a>
+        <a href="Seasons.html" id="seasons">Seasons</a>
+        <a href="robots.html" id="robots" class="active">Robots</a>
+        <a href="Contact.html" id="contact">Contact</a>
     </nav>
     
     <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="200">
