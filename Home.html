@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="We are a FIRST Tech Challenge team from Kimberly, Idaho, Est. 2012. We are the oldest FTC team in Idaho & our goal is to expand FIRST in our state!">
+    <title>5026 Tesla Coils</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Favicon -->
+    <!-- Add Favicon -->
     <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
 
     <!-- Declare Batman Forever -->
@@ -42,7 +43,7 @@
             margin: 0 auto;
         }
 
-        /* Sidebar styles */
+        /* Nav Sidebar styles */
         .sidebar {
             height: 100vh;
             width: 250px;
@@ -82,6 +83,7 @@
             background: white;
             margin: 5px;
             transition: 0.3s;
+            border-radius: 5px; /* Added this line to round the corners */
         }
 
         .menu-toggle.open div:nth-child(1) {
@@ -157,12 +159,18 @@
     </div>
     
     <nav class="sidebar" id="sidebar">
+        <a href="Sponsors.html">Sponsors</a>
+        <a href="Meet_the_Team.html">Meet the Team</a>
+        <a href="Find_Local_Teams.html">Find Local Teams</a>
+        <a href="History.html">History</a>
+        <a href="Seasons.html">Seasons</a>
+        <a href="Robots.html">Robots</a>
         <a href="Contact.html">Contact</a>
     </nav>
     
     <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="200">
     <h2>5026 Tesla Coils</h2>
-    <p>Welcom to the New 5026 Tesla Coils Website please be Paitent while be move our infomration over to the new Site!</p>
+    <p>Welcome to the New 5026 Tesla Coils Website, please be patient while we move our information over to this new site!</p>
 
     <!-- Footer Section -->
     <footer>
@@ -187,12 +195,12 @@
                 <img src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png" alt="Discord">
             </a>
 
-            <!-- Placeholder for FTC Scout Logo (fill in your link) -->
+            <!-- FTC Scout Icon -->
             <a href="https://ftcscout.org/teams/5026" target="_blank">
                 <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
             </a>
 
-            <!-- Placeholder for Team Rev Logo (fill in your link) -->
+            <!-- Team Rev Icon -->
             <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
                 <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/tr.webp" alt="Team Rev">
             </a>
@@ -206,10 +214,10 @@
 
     <script>
         function toggleMenu() {
-            // Toggle sidebar active class
+            // trigger sidebar active class
             document.getElementById('sidebar').classList.toggle('active');
             
-            // Add spin and open classes to the menu button
+            // Add animation spin and open classes to the menu button
             const menuButton = document.querySelector('.menu-toggle');
             menuButton.classList.toggle('spin');
             menuButton.classList.toggle('open');
