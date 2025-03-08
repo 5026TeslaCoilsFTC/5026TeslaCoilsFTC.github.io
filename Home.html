@@ -98,6 +98,49 @@
         .sidebar.active {
             left: 0;
         }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 50px; /* Ensures content isn't overlapped by footer */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ccc;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -114,6 +157,52 @@
     <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="200">
     <h2>5026 Tesla Coils</h2>
     <p>Test for 5026 Website</p>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-icons">
+            <!-- Facebook Icon -->
+            <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+
+            <!-- Instagram Icon -->
+            <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+            </a>
+
+            <!-- Gmail Icon -->
+            <a href="mailto:5026teslacoils@gmail.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Google_Mail_logo_2020.svg" alt="Gmail">
+            </a>
+
+            <!-- Discord Icon -->
+            <a href="https://tr.ee/cAMC484Qrb" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Discord_logo_2021.svg" alt="Discord">
+            </a>
+
+            <!-- Placeholder for FTC Scout Logo (fill in your link) -->
+            <a href="https://ftcscout.org/teams/5026" target="_blank">
+                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
+            </a>
+
+            <!-- Placeholder for Team Rev Logo (fill in your link) -->
+            <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
+                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/tr.webp" alt="Team Rev">
+            </a>
+
+            <!-- Github Icon -->
+            <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Github">
+            </a>
+        </div>
+
+        <div class="footer-links">
+            <!-- Placeholder Links -->
+            <a href="your-ftc-scout-link">FTC Scout</a>
+            <a href="your-team-rev-link">Team Rev</a>
+        </div>
+    </footer>
 
     <script>
         function toggleMenu() {
