@@ -76,7 +76,7 @@
             top: 15px;
             left: 15px;
             cursor: pointer;
-            z-index: 100;
+            z-index: 1500; /* Increased z-index to keep the button on top */
             transition: 0.3s;
         }
 
@@ -229,6 +229,16 @@
             menuButton.classList.toggle('spin');
             menuButton.classList.toggle('open');
         }
+
+        // Highlight the active page link
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".sidebar a");
+
+        navLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add("active");
+            }
+        });
     </script>
 </body>
 </html>
