@@ -1,6 +1,12 @@
 body {
+
     margin: 0;
     text-decoration: white;
     background: black;
     text-align: center;
+=======
+   margin: 0;
+   text-decoration-color: white;
+   background: black;
+   text-align: center; 
 }
