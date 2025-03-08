@@ -66,6 +66,8 @@
             top: 15px;
             left: 15px;
             cursor: pointer;
+            z-index: 100;
+            transition: 0.3s;
         }
 
         .menu-toggle div {
@@ -74,6 +76,23 @@
             background: white;
             margin: 5px;
             transition: 0.3s;
+        }
+
+        .menu-toggle.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .menu-toggle.spin {
+            transform: rotate(360deg);
+            transition: transform 0.3s;
         }
 
         .sidebar.active {
@@ -98,7 +117,13 @@
 
     <script>
         function toggleMenu() {
+            // Toggle sidebar active class
             document.getElementById('sidebar').classList.toggle('active');
+            
+            // Add spin and open classes to the menu button
+            const menuButton = document.querySelector('.menu-toggle');
+            menuButton.classList.toggle('spin');
+            menuButton.classList.toggle('open');
         }
     </script>
 </body>
