@@ -50,7 +50,7 @@
             position: fixed;
             top: 0;
             left: -250px;
-            background: #333;
+            background: #000000;
             padding-top: 60px;
             transition: 0.3s;
             z-index: 1000; /* Ensure the sidebar is the topmost element */
@@ -168,7 +168,7 @@
         <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
         <a href="History.html" id="history">History</a>
         <a href="Seasons.html" id="seasons">Seasons</a>
-        <a href="robots.html" id="robots" class="active">Robots</a>
+        <a href="robots.html" id="robots">Robots</a>
         <a href="Contact.html" id="contact">Contact</a>
     </nav>
     
@@ -231,12 +231,15 @@
         }
 
         // Highlight the active page link
-        const currentPage = window.location.pathname.split("/").pop();
+        const currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
         const navLinks = document.querySelectorAll(".sidebar a");
 
         navLinks.forEach(link => {
+            // Check if the current page exactly matches the href of the link
             if (link.href.includes(currentPage)) {
                 link.classList.add("active");
+            } else {
+                link.classList.remove("active"); // Remove active from other links
             }
         });
     </script>
