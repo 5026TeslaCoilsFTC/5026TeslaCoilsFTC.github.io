@@ -53,6 +53,7 @@
             background: #333;
             padding-top: 60px;
             transition: 0.3s;
+            z-index: 1000; /* Ensure the sidebar is the topmost element */
         }
 
         .sidebar a {
@@ -66,6 +67,7 @@
 
         .sidebar a:hover, .sidebar a.active {
             background: #000000;
+            color: black; /* Change text color to black on hover */
             background-color: rgb(32, 255, 32);
         }
 
@@ -160,6 +162,7 @@
     </div>
     
     <nav class="sidebar" id="sidebar">
+        <a href="Home.html" id="Home">Home</a>
         <a href="Sponsors.html" id="sponsors">Sponsors</a>
         <a href="Meet_the_Team.html" id="meet">Meet the Team</a>
         <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
