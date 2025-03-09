@@ -1,8 +1,157 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>5026 Tesla Coils - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Add Favicon -->
+    <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
+
+    <!-- Declare Batman Forever -->
+    <style>
+        @font-face {
+            font-family: 'BatmanForever';
+            src: url('https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/batmanf/batmfa__.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Apply font */
+        body {
+            font-family: 'BatmanForever', sans-serif;
+            background-color: black; /* Optional dark theme */
+            text-align: center; /* Centers inline elements like text and images */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the page takes up the full height of the viewport */
+        }
+
+        p, h2 {
+            color: white; /* Ensure text is visible */
+        }
+
+        h2 {
+            font-size: 32px; /* Adjust as needed */
+        }
+
+        /* Center Coils Logo */
+        .logo {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Nav Sidebar styles */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background: #000000;
+            padding-top: 60px;
+            transition: 0.3s;
+            z-index: 1000; /* Ensure the sidebar is the topmost element */
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            background: #000000;
+            color: black; /* Change text color to black on hover */
+            background-color: rgb(32, 255, 32);
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            cursor: pointer;
+            z-index: 1500; /* Increased z-index to keep the button on top */
+            transition: 0.3s;
+        }
+
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background: white;
+            margin: 5px;
+            transition: 0.3s;
+            border-radius: 5px; /* Added this line to round the corners */
+        }
+
+        .menu-toggle.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .menu-toggle.spin {
+            transform: rotate(360deg);
+            transition: transform 0.3s;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: auto; /* Ensures footer stays at the bottom */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ccc;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
     <h1>Contact Page</h1>
