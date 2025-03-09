@@ -22,19 +22,19 @@
         /* Apply font */
         body {
             font-family: 'BatmanForever', sans-serif;
-            background-color: black; /* Optional dark theme */
-            text-align: center; /* Centers inline elements like text and images */
+            background-color: black;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensures the page takes up the full height of the viewport */
+            min-height: 100vh;
         }
 
         p, h2 {
-            color: white; /* Ensure text is visible */
+            color: white;
         }
 
         h2 {
-            font-size: 32px; /* Adjust as needed */
+            font-size: 32px;
         }
 
         /* Center Coils Logo */
@@ -43,79 +43,12 @@
             margin: 0 auto;
         }
 
-        /* Nav Sidebar styles */
-        .sidebar {
-            height: 100vh;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: -250px;
-            background: #000000;
-            padding-top: 60px;
-            transition: 0.3s;
-            z-index: 1000; /* Ensure the sidebar is the topmost element */
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover, .sidebar a.active {
-            background: #000000;
-            color: black; /* Change text color to black on hover */
-            background-color: rgb(32, 255, 32);
-        }
-
-        .menu-toggle {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            cursor: pointer;
-            z-index: 1500; /* Increased z-index to keep the button on top */
-            transition: 0.3s;
-        }
-
-        .menu-toggle div {
-            width: 30px;
-            height: 4px;
-            background: white;
-            margin: 5px;
-            transition: 0.3s;
-            border-radius: 5px; /* Added this line to round the corners */
-        }
-
-        .menu-toggle.open div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .menu-toggle.open div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.open div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        .menu-toggle.spin {
-            transform: rotate(360deg);
-            transition: transform 0.3s;
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
         /* Footer Styles */
         footer {
             background-color: #333;
             color: white;
             padding: 20px;
-            margin-top: auto; /* Ensures footer stays at the bottom */
+            margin-top: auto;
         }
 
         .social-icons {
@@ -155,23 +88,9 @@
     </style>
 </head>
 <body>
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    
-    <nav class="sidebar" id="sidebar">
-        <a href="Home.html" id="Home">Home</a>
-        <a href="Sponsors.html" id="sponsors">Sponsors</a>
-        <a href="Meet_the_Team.html" id="meet">Meet the Team</a>
-        <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
-        <a href="History.html" id="history">History</a>
-        <a href="Seasons.html" id="seasons">Seasons</a>
-        <a href="robots.html" id="robots">Robots</a>
-        <a href="Contact.html" id="contact">Contact</a>
-    </nav>
-    
+    <!-- Sidebar Container (Loaded from sidebar.html) -->
+    <div id="sidebar-container"></div>
+
     <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="200">
     <h2>5026 Tesla Coils</h2>
     <p>Welcome to the New 5026 Tesla Coils Website, please be patient while we move our information over to this new site!</p>
@@ -182,37 +101,24 @@
     <!-- Footer Section -->
     <footer>
         <div class="social-icons">
-            <!-- Facebook Icon -->
             <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
             </a>
-
-            <!-- Instagram Icon -->
             <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
             </a>
-
-            <!-- Gmail Icon -->
             <a href="mailto:5026teslacoils@gmail.com" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1280px-Gmail_icon_%282020%29.svg.png" alt="Gmail">
             </a>
-
-            <!-- Discord Icon -->
             <a href="https://tr.ee/cAMC484Qrb" target="_blank">
                 <img src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png" alt="Discord">
             </a>
-
-            <!-- FTC Scout Icon -->
             <a href="https://ftcscout.org/teams/5026" target="_blank">
                 <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
             </a>
-
-            <!-- Team Rev Icon -->
             <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
                 <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/tr.webp" alt="Team Rev">
             </a>
-
-            <!-- Github Icon -->
             <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
                 <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
             </a>
@@ -220,28 +126,26 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            // trigger sidebar active class
-            document.getElementById('sidebar').classList.toggle('active');
-            
-            // Add animation spin and open classes to the menu button
-            const menuButton = document.querySelector('.menu-toggle');
-            menuButton.classList.toggle('spin');
-            menuButton.classList.toggle('open');
-        }
+        // Load sidebar from sidebar.html
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('sidebar-container').innerHTML = data);
 
-        // Highlight the active page link
-        const currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
-        const navLinks = document.querySelectorAll(".sidebar a");
+        // Function to highlight the active page
+        window.onload = function() {
+            setTimeout(() => {
+                const currentPage = window.location.pathname.split("/").pop();
+                const navLinks = document.querySelectorAll(".sidebar a");
 
-        navLinks.forEach(link => {
-            // Check if the current page exactly matches the href of the link
-            if (link.href.includes(currentPage)) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active"); // Remove active from other links
-            }
-        });
+                navLinks.forEach(link => {
+                    if (link.href.includes(currentPage)) {
+                        link.classList.add("active");
+                    } else {
+                        link.classList.remove("active");
+                    }
+                });
+            }, 500);
+        };
     </script>
 </body>
 </html>
