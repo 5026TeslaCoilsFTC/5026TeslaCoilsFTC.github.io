@@ -16,66 +16,6 @@
             color: white;
         }
 
-        .sidebar {
-            height: 100vh;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: -250px;
-            background: #333;
-            padding-top: 60px;
-            transition: 0.3s;
-            z-index: 1000;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover, .sidebar a.active {
-            background: #575757;
-            background-color: green;
-        }
-
-        .menu-toggle {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            cursor: pointer;
-            z-index: 100;
-            transition: 0.3s;
-        }
-
-        .menu-toggle div {
-            width: 30px;
-            height: 4px;
-            background: white;
-            margin: 5px;
-            transition: 0.3s;
-            border-radius: 5px;
-        }
-
-        .menu-toggle.open div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .menu-toggle.open div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.open div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
         .robot img {
             width: 100%;
         }
@@ -89,21 +29,8 @@
     </style>
 </head>
 <body>
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    
-    <nav class="sidebar" id="sidebar">
-        <a href="Sponsors.html" id="sponsors">Sponsors</a>
-        <a href="Meet_the_Team.html" id="meet">Meet the Team</a>
-        <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
-        <a href="History.html" id="history">History</a>
-        <a href="Seasons.html" id="seasons">Seasons</a>
-        <a href="robots.html" id="robots" class="active">Robots</a>
-        <a href="Contact.html" id="contact">Contact</a>
-    </nav>
+    <!-- Sidebar Container (Loaded from sidebar.html) -->
+    <div id="sidebar-container"></div>
     
     <h1>Our Robots</h1>
 
@@ -166,12 +93,10 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-            const menuButton = document.querySelector('.menu-toggle');
-            menuButton.classList.toggle('spin');
-            menuButton.classList.toggle('open');
-        }
+        // Load sidebar from sidebar.html
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('sidebar-container').innerHTML = data);
     </script>
 </body>
 </html>
