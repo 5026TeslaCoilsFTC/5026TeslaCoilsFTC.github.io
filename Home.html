@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Add Favicon -->
-    <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
+    <link rel="icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
 
     <!-- Declare Batman Forever -->
     <style>
@@ -19,7 +19,7 @@
             font-style: normal;
         }
 
-        /* Apply font */
+        /* General Styles */
         body {
             font-family: 'BatmanForever', sans-serif;
             background-color: black;
@@ -27,6 +27,8 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
 
         p, h2 {
@@ -37,13 +39,81 @@
             font-size: 32px;
         }
 
-        /* Center Coils Logo */
+        /* Sidebar Styles */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background: #333;
+            padding-top: 60px;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            background: #575757;
+            background-color: green;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            cursor: pointer;
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background: white;
+            margin: 5px;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        .menu-toggle.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        /* Center Logo */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
         .logo {
             display: block;
             margin: 0 auto;
+            width: 200px;
         }
 
-        /* Footer Styles */
+        /* Footer */
         footer {
             background-color: #333;
             color: white;
@@ -88,17 +158,37 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar Container (Loaded from sidebar.html) -->
-    <div id="sidebar-container"></div>
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
-    <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="200">
-    <h2>5026 Tesla Coils</h2>
-    <p>Welcome to the New 5026 Tesla Coils Website, please be patient while we move our information over to this new site!</p>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <a href="Home.html" id="Home">Home</a>
+        <a href="Sponsors.html" id="sponsors">Sponsors</a>
+        <a href="Meet_the_Team.html" id="meet">Meet the Team</a>
+        <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
+        <a href="History.html" id="history">History</a>
+        <a href="Seasons.html" id="seasons">Seasons</a>
+        <a href="robots.html" id="robots">Robots</a>
+        <a href="Contact.html" id="contact">Contact</a>
+    </nav>
 
-    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-    <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="America/Denver" data-textcolor="#ffffff" data-date="2025-04-16 10:00" data-background="#3cff00" data-digitscolor="#ffffff" data-unitscolor="#ffffff">World Championship</a>
+    <!-- Main Content -->
+    <div class="content">
+        <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo">
+        <h2>5026 Tesla Coils</h2>
+        <p>Welcome to the New 5026 Tesla Coils Website, please be patient while we move our information over to this new site!</p>
 
-    <!-- Footer Section -->
+        <!-- Countdown Timer -->
+        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+        <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="America/Denver" data-textcolor="#ffffff" data-date="2025-04-16 10:00" data-background="#3cff00" data-digitscolor="#ffffff" data-unitscolor="#ffffff">World Championship</a>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <div class="social-icons">
             <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
@@ -113,38 +203,24 @@
             <a href="https://tr.ee/cAMC484Qrb" target="_blank">
                 <img src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png" alt="Discord">
             </a>
-            <a href="https://ftcscout.org/teams/5026" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
-            </a>
-            <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/tr.webp" alt="Team Rev">
-            </a>
-            <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
-                <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
-            </a>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // Load sidebar from sidebar.html
-        fetch('sidebar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('sidebar-container').innerHTML = data);
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            const menuButton = document.querySelector('.menu-toggle');
+            menuButton.classList.toggle('open');
+        }
 
-        // Function to highlight the active page
         window.onload = function() {
-            setTimeout(() => {
-                const currentPage = window.location.pathname.split("/").pop();
-                const navLinks = document.querySelectorAll(".sidebar a");
-
-                navLinks.forEach(link => {
-                    if (link.href.includes(currentPage)) {
-                        link.classList.add("active");
-                    } else {
-                        link.classList.remove("active");
-                    }
-                });
-            }, 500);
+            const currentPage = window.location.pathname.split("/").pop();
+            document.querySelectorAll(".sidebar a").forEach(link => {
+                if (link.href.includes(currentPage)) {
+                    link.classList.add("active");
+                }
+            });
         };
     </script>
 </body>
