@@ -22,19 +22,19 @@
         /* Apply font */
         body {
             font-family: 'BatmanForever', sans-serif;
-            background-color: black; /* Optional dark theme */
-            text-align: center; /* Centers inline elements like text and images */
+            background-color: black;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensures the page takes up the full height of the viewport */
+            min-height: 100vh;
         }
 
         p, h2 {
-            color: white; /* Ensure text is visible */
+            color: white;
         }
 
         h2 {
-            font-size: 32px; /* Adjust as needed */
+            font-size: 32px;
         }
 
         /* Center Coils Logo */
@@ -53,7 +53,7 @@
             background: #000000;
             padding-top: 60px;
             transition: 0.3s;
-            z-index: 1000; /* Ensure the sidebar is the topmost element */
+            z-index: 1000;
         }
 
         .sidebar a {
@@ -66,9 +66,8 @@
         }
 
         .sidebar a:hover, .sidebar a.active {
-            background: #000000;
-            color: black; /* Change text color to black on hover */
             background-color: rgb(32, 255, 32);
+            color: black;
         }
 
         .menu-toggle {
@@ -76,7 +75,7 @@
             top: 15px;
             left: 15px;
             cursor: pointer;
-            z-index: 1500; /* Increased z-index to keep the button on top */
+            z-index: 1500;
             transition: 0.3s;
         }
 
@@ -86,7 +85,7 @@
             background: white;
             margin: 5px;
             transition: 0.3s;
-            border-radius: 5px; /* Added this line to round the corners */
+            border-radius: 5px;
         }
 
         .menu-toggle.open div:nth-child(1) {
@@ -115,7 +114,7 @@
             background-color: #333;
             color: white;
             padding: 20px;
-            margin-top: auto; /* Ensures footer stays at the bottom */
+            margin-top: auto;
         }
 
         .social-icons {
@@ -231,7 +230,7 @@
         }
 
         // Highlight the active page link
-        const currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
+        const currentPage = window.location.pathname.split("/").pop();
         const navLinks = document.querySelectorAll(".sidebar a");
 
         navLinks.forEach(link => {
@@ -239,7 +238,7 @@
             if (link.href.includes(currentPage)) {
                 link.classList.add("active");
             } else {
-                link.classList.remove("active"); // Remove active from other links
+                link.classList.remove("active");
             }
         });
     </script>

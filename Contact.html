@@ -21,28 +21,22 @@
         /* Apply font */
         body {
             font-family: 'BatmanForever', sans-serif;
-            background-color: black; /* Optional dark theme */
-            text-align: center; /* Centers inline elements like text and images */
+            background-color: black;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensures the page takes up the full height of the viewport */
+            min-height: 100vh;
         }
 
         p, h2 {
-            color: white; /* Ensure text is visible */
+            color: white;
         }
 
         h2 {
-            font-size: 32px; /* Adjust as needed */
+            font-size: 32px;
         }
 
-        /* Center Coils Logo */
-        .logo {
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Nav Sidebar styles */
+        /* Sidebar styles */
         .sidebar {
             height: 100vh;
             width: 250px;
@@ -52,7 +46,7 @@
             background: #000000;
             padding-top: 60px;
             transition: 0.3s;
-            z-index: 1000; /* Ensure the sidebar is the topmost element */
+            z-index: 1000;
         }
 
         .sidebar a {
@@ -65,9 +59,8 @@
         }
 
         .sidebar a:hover, .sidebar a.active {
-            background: #000000;
-            color: black; /* Change text color to black on hover */
             background-color: rgb(32, 255, 32);
+            color: black;
         }
 
         .menu-toggle {
@@ -75,8 +68,7 @@
             top: 15px;
             left: 15px;
             cursor: pointer;
-            z-index: 1500; /* Increased z-index to keep the button on top */
-            transition: 0.3s;
+            z-index: 1500;
         }
 
         .menu-toggle div {
@@ -85,7 +77,7 @@
             background: white;
             margin: 5px;
             transition: 0.3s;
-            border-radius: 5px; /* Added this line to round the corners */
+            border-radius: 5px;
         }
 
         .menu-toggle.open div:nth-child(1) {
@@ -100,11 +92,6 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .menu-toggle.spin {
-            transform: rotate(360deg);
-            transition: transform 0.3s;
-        }
-
         .sidebar.active {
             left: 0;
         }
@@ -114,87 +101,65 @@
             background-color: #333;
             color: white;
             padding: 20px;
-            margin-top: auto; /* Ensures footer stays at the bottom */
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 24px;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #ccc;
-        }
-
-        .social-icons img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .footer-links {
-            margin-top: 20px;
-        }
-
-        .footer-links a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: #ccc;
+            margin-top: auto;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+    <nav class="sidebar" id="sidebar">
+        <a href="Home.html">Home</a>
+        <a href="Sponsors.html">Sponsors</a>
+        <a href="Meet_the_Team.html">Meet the Team</a>
+        <a href="Find_Local_Teams.html">Find Local Teams</a>
+        <a href="History.html">History</a>
+        <a href="Seasons.html">Seasons</a>
+        <a href="robots.html">Robots</a>
+        <a href="Contact.html" class="active">Contact</a>
+    </nav>
+    
     <h2>Contact Page</h2>
-
-     <!-- Footer Section -->
-     <footer>
+    
+    <footer>
         <div class="social-icons">
-            <!-- Facebook Icon -->
             <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
             </a>
-
-            <!-- Instagram Icon -->
             <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
             </a>
-
-            <!-- Gmail Icon -->
             <a href="mailto:5026teslacoils@gmail.com" target="_blank">
                 <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png?f=webp" alt="Gmail">
             </a>
-
-            <!-- Discord Icon -->
             <a href="https://tr.ee/cAMC484Qrb" target="_blank">
                 <img src="https://media.licdn.com/dms/image/v2/D5612AQHt-Y26_Im7IA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1714463825421?e=2147483647&v=beta&t=xv9clrh7m49h5p5l0wtCCluyzDp4pIadvSXh2tU-xhE" alt="Discord">
             </a>
-
-            <!-- FTC Scout Icon -->
-            <a href="https://ftcscout.org/teams/5026" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
-            </a>
-
-            <!-- Team Rev Icon -->
-            <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/tr.webp" alt="Team Rev">
-            </a>
-
-            <!-- Github Icon -->
-            <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
-                <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
-            </a>
         </div>
     </footer>
-</body>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            const menuButton = document.querySelector('.menu-toggle');
+            menuButton.classList.toggle('open');
+        }
 
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".sidebar a");
+
+        navLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    </script>
+</body>
 </html>
