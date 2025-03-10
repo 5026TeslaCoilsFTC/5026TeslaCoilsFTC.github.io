@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Site summary at search-->
     <meta name="description" content="We are a FIRST Tech Challenge team from Kimberly, Idaho, Est. 2012. We are the oldest FTC team in Idaho & our goal is to expand FIRST in our state!">
+    <!--Site Tite in Tab-->
     <title>5026 Tesla Coils</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Add Favicon -->
+    <!-- Favicon -->
     <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
 
     <!-- Declare Batman Forever -->
@@ -19,7 +21,7 @@
             font-style: normal;
         }
 
-        /* Apply font */
+        /* Apply BatmanF */
         body {
             font-family: 'BatmanForever', sans-serif;
             background-color: black;
@@ -43,8 +45,8 @@
             margin: 0 auto;
         }
 
-        /* Nav Sidebar styles */
-        .sidebar {
+         /* Sidebar styles */
+         .sidebar {
             height: 100vh;
             width: 250px;
             position: fixed;
@@ -76,7 +78,6 @@
             left: 15px;
             cursor: pointer;
             z-index: 1500;
-            transition: 0.3s;
         }
 
         .menu-toggle div {
@@ -98,11 +99,6 @@
 
         .menu-toggle.open div:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        .menu-toggle.spin {
-            transform: rotate(360deg);
-            transition: transform 0.3s;
         }
 
         .sidebar.active {
@@ -161,7 +157,7 @@
     </div>
     
     <nav class="sidebar" id="sidebar">
-        <a href="Home.html" id="Home">Home</a>
+        <a href="Home.html" id="Home" class="active">Home</a>
         <a href="Sponsors.html" id="sponsors">Sponsors</a>
         <a href="Meet_the_Team.html" id="meet">Meet the Team</a>
         <a href="Find_Local_Teams.html" id="teams">Find Local Teams</a>
@@ -170,15 +166,16 @@
         <a href="robots.html" id="robots">Robots</a>
         <a href="Contact.html" id="contact">Contact</a>
     </nav>
-    
+    <!--5026 Logo-->
     <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="200">
+    <!--Site Name-->
     <h2>5026 Tesla Coils</h2>
     <p>Welcome to the New 5026 Tesla Coils Website, please be patient while we move our information over to this new site!</p>
 
     <script src="https://cdn.logwork.com/widget/countdown.js"></script>
     <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="America/Denver" data-textcolor="#ffffff" data-date="2025-04-16 10:00" data-background="#3cff00" data-digitscolor="#ffffff" data-unitscolor="#ffffff">World Championship</a>
 
-    <!-- Footer Section -->
+    <!-- Footer Logos -->
     <footer>
         <div class="social-icons">
             <!-- Facebook Icon -->
@@ -220,21 +217,19 @@
 
     <script>
         function toggleMenu() {
-            // trigger sidebar active class
+            // trigger sidebar active
             document.getElementById('sidebar').classList.toggle('active');
             
-            // Add animation spin and open classes to the menu button
+            // animate the bar
             const menuButton = document.querySelector('.menu-toggle');
-            menuButton.classList.toggle('spin');
             menuButton.classList.toggle('open');
         }
 
-        // Highlight the active page link
-        const currentPage = window.location.pathname.split("/").pop();
+         // Highlight the active or hovering
+         const currentPage = window.location.pathname.split("/").pop();
         const navLinks = document.querySelectorAll(".sidebar a");
 
         navLinks.forEach(link => {
-            // Check if the current page exactly matches the href of the link
             if (link.href.includes(currentPage)) {
                 link.classList.add("active");
             } else {
