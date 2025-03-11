@@ -45,6 +45,12 @@
             margin: 0 auto;
         }
 
+         /* Center images with 0 margin */
+         .center {
+            display: block;
+            margin: 0 auto;
+        }
+
          /* Sidebar styles */
          .sidebar {
             height: 100vh;
@@ -169,6 +175,7 @@
     </nav>
     <!--5026 Logo-->
     <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="200">
+
     <!--Site Name-->
     <h2>5026 Tesla Coils</h2>
     <p>Welcome to the New 5026 Tesla Coils Website, please be patient while we move our information over to this new site!</p>
@@ -176,8 +183,27 @@
     <script src="https://cdn.logwork.com/widget/countdown.js"></script>
     <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="America/Denver" data-textcolor="#ffffff" data-date="2025-04-16 10:00" data-background="#3cff00" data-digitscolor="#ffffff" data-unitscolor="#ffffff">World Championship</a>
 
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+      </div>
+      
+      <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 15px; /* Adds space between grid items */
+        }
+        .grid-item {
+          padding: 20px;
+          background: coral;
+        }
+      </style>
+      
+
     <h2>Announcements</h2>
-    <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/25camp.png" alt="Camps" width="100" heigh="200">
+    <img class="center" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/25camp.png" alt="Camps" width="400" heigh="800">
 
     <!-- Footer Logos -->
     <footer>
