@@ -176,5 +176,67 @@
     <h2>Thank You to CSI for being our Summer Camp Partner</h2>
         <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/25camp.png" alt="camps" width="200" heigh="400" margin="0">
 
+         <!-- Footer Logos -->
+    <footer>
+        <div class="social-icons">
+            <!-- Facebook Icon -->
+            <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+
+            <!-- Instagram Icon -->
+            <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+            </a>
+
+            <!-- Gmail Icon -->
+            <a href="mailto:5026teslacoils@gmail.com" target="_blank">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png?f=webp" alt="Gmail">
+            </a>
+
+            <!-- Discord Icon -->
+            <a href="https://tr.ee/cAMC484Qrb" target="_blank">
+                <img src="https://brandlogos.net/wp-content/uploads/2021/11/discord-logo-512x512.png" alt="Discord">
+            </a>
+
+            <!-- FTC Scout Icon -->
+            <a href="https://ftcscout.org/teams/5026" target="_blank">
+                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
+            </a>
+
+            <!-- Team Rev Icon -->
+            <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
+                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/tr.png" alt="Team Rev">
+            </a>
+
+            <!-- Github Icon -->
+            <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
+                <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            // trigger sidebar active
+            document.getElementById('sidebar').classList.toggle('active');
+            
+            // animate the bar
+            const menuButton = document.querySelector('.menu-toggle');
+            menuButton.classList.toggle('open');
+        }
+
+         // Highlight the active or hovering
+         const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll(".sidebar a");
+
+        navLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    </script>
 </body>
 </html>
