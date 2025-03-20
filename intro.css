@@ -58,14 +58,16 @@ header h4{
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.8);
 }
-/* changed from relative to Abs */
+
 .logo {
     position: relative;
     display: inline-block;
-    bottom: -20px;
-    width: 100px;
-    opacity: 0;
+    bottom: 0;
+    width: 400px;
+    opacity: 1; /* Ensure it's visible */
+    transition: ease-in-out 0.5s;
 }
+
 
 .logo.active{
     bottom: 0;

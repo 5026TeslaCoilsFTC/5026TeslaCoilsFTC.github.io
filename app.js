@@ -1,5 +1,6 @@
 let intro = document.querySelector('.intro');
-let logo = document.querySelector('.logoa'); // Select the logo
+let splashLogo = document.querySelector('.logoa'); // Splash screen logo
+let mainLogo = document.querySelector('.logo'); // Main page logo
 let logospan = document.querySelectorAll('.intro span');
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -11,9 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {
             }, (idx + 1) * 400);
         });
 
-        // Animate the logo
+        // Animate the splash logo
         setTimeout(() => {
-            logo.classList.add('active'); // Add animation class to the logo
+            splashLogo.classList.add('active'); // Add animation class to splash logo
         }, 800); // Slight delay after spans appear
 
         setTimeout(() => {
@@ -24,12 +25,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 }, (idx + 1) * 50);
             });
 
-            logo.classList.add('fade'); // Make the logo fade too
+            splashLogo.classList.add('fade'); // Make splash logo fade
 
         }, 2000);
 
         setTimeout(() => {
             intro.style.top = '-100vh'; // Remove splash screen
+            mainLogo.classList.add('active'); // Ensure main logo appears
         }, 2300);
     });
 });
