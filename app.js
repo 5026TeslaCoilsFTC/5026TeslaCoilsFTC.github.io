@@ -21,11 +21,11 @@ window.addEventListener('DOMContentLoaded', () => {
             logospan.forEach((span, idx) => {
                 setTimeout(() => {
                     span.classList.remove('active');
-                    span.classList.add('splash');
+                    span.classList.add('fade');
                 }, (idx + 1) * 50);
             });
 
-            splashLogo.classList.add('splash'); // Make splash logo fade
+            splashLogo.classList.add('fade'); // Make splash logo fade
 
         }, 2000);
 
