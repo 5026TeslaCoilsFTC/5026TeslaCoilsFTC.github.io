@@ -60,7 +60,7 @@ header h4{
 }
 /* changed from relative to Abs */
 .logo {
-    position: absolute;
+    position: relative;
     display: inline-block;
     bottom: -20px;
     width: 100px;
