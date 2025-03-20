@@ -12,3 +12,14 @@ body {
     color: white;
     font-size: 9px; /* Adjust size as needed */
 }
+
+.hide-on-small {
+    display: block; /* or whatever the default display is */
+}
+
+/* This will hide the element when the screen size is below 800px */
+@media screen and (max-width: 800px) {
+    .hide-on-small {
+        display: none;
+    }
+}
