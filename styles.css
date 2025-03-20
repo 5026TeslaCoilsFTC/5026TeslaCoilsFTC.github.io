@@ -1,7 +1,14 @@
 body {
-
     margin: 0;
     background-color: black;
     text-align: center;
-    
+    position: relative; /* Required to position elements within the body */
+}
+
+.footer-text {
+    position: absolute;
+    bottom: 30px; /* Adjust as needed */
+    left: 10px;   /* Adjust as needed */
+    color: white;
+    font-size: 9px; /* Adjust size as needed */
 }
