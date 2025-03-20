@@ -18,7 +18,7 @@ body {
 }
 
 /* This will hide the element when the screen size is below 800px */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1800px) {
     .hide-on-small {
         display: none;
     }
