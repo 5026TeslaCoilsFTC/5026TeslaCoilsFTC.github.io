@@ -24,7 +24,7 @@ body {
     }
 }
 
-ader */
+/* Fullscreen Preloader */
 #preloader {
     position: fixed;
     width: 100%;
@@ -34,13 +34,6 @@ ader */
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 1s ease-out; /* Smooth fade-out effect */
-}
-
-/* Hide the preloader smoothly */
-#preloader.hidden {
-    opacity: 0;
-    pointer-events: none; /* Prevents interaction */
 }
 
 /* Hide the main content initially */
