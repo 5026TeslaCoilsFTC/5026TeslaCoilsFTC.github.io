@@ -1,12 +1,22 @@
 window.addEventListener("load", function () {
-    let preloader = document.getElementById("preloader");
+    console.log("Page has loaded, attempting to hide preloader...");
 
-    if (preloader) {
-        preloader.style.opacity = "0"; // Fade out
-        setTimeout(() => {
-            preloader.style.display = "none"; // Hide after fade
-            document.getElementById("content").style.display = "block"; // Show content
-        }, 1000); // Wait for fade-out effect
+    let preloader = document.getElementById("preloader");
+    let content = document.getElementById("content");
+
+    if (!preloader || !content) {
+        console.error("Preloader or content div not found!");
+        return;
     }
+
+    // Start fade out
+    preloader.style.opacity = "0"; 
+    console.log("Preloader fade out started.");
+
+    // After fade, remove preloader and show content
+    setTimeout(() => {
+        preloader.style.display = "none"; 
+        content.style.display = "block";
+        console.log("Preloader hidden, content displayed.");
+    }, 1000);
 });
- 
