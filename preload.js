@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-    console.log("Page has loaded, attempting to hide preloader...");
+    console.log("Page fully loaded, removing preloader and showing content...");
 
     let preloader = document.getElementById("preloader");
     let content = document.getElementById("content");
@@ -9,14 +9,15 @@ window.addEventListener("load", function () {
         return;
     }
 
-    // Start fade out
+    // Ensure visibility
+    content.style.display = "block";
+    content.style.opacity = "1";
+    content.style.visibility = "visible";
+    
+    // Fade out preloader
     preloader.style.opacity = "0"; 
-    console.log("Preloader fade out started.");
-
-    // After fade, remove preloader and show content
     setTimeout(() => {
         preloader.style.display = "none"; 
-        content.style.display = "block";
-        console.log("Preloader hidden, content displayed.");
+        console.log("Preloader hidden, content shown.");
     }, 1000);
 });
