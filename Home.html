@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="intro.css">
 
-
     <!-- Favicon -->
     <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
 
@@ -49,20 +48,17 @@
             font-size: 8px;
         }
 
-        /* Center Coils Logo */
         .logo {
             display: block;
             margin: 0 auto;
         }
 
-         /* Center images with 0 margin */
-         .center {
+        .center {
             display: block;
             margin: 0 auto;
         }
 
-         /* Sidebar styles */
-         .sidebar {
+        .sidebar {
             height: 100vh;
             width: 250px;
             position: fixed;
@@ -121,8 +117,7 @@
             left: 0;
         }
 
-         /* Footer Styles */
-         footer {
+        footer {
             background-color: #333;
             color: white;
             padding: 20px;
@@ -170,119 +165,102 @@
             margin-top: 30px;
         }
 
+
     </style>
 </head>
 <body>
+
+    <!-- Dismissible Banner -->
+    <div id="announcement-banner">
+        <span> Welcome to The New 5026 Tesla Coils Website — Summer Camp Registration is Open! </span>
+        <button id="close-banner">&times;</button>
+    </div>
+
     <div id="preloader">
         <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/ITD.gif" alt="Loading...">
     </div>
 
-    
-<div id="content">
+    <div id="content">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+        <nav class="sidebar" id="sidebar">
+            <a href="Home.html" id="Home" class="active">Home</a>
+            <a href="sponsors.html" id="sponsors">Sponsors</a>
+            <a href="meettheteam.html" id="meet">Meet the Team</a>
+            <a href="localteams.html" id="teams">Find Local Teams</a>
+            <a href="History.html" id="history">History</a>
+            <a href="Seasons.html" id="seasons">Seasons</a>
+            <a href="robots.html" id="robots">Robots</a>
+            <a href="camps.html" id="camps">Summer Camps</a>
+            <a href="Contact.html" id="contact">Contact</a>
+        </nav>
+
+        <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="300">
+
+        <h2>5026 Tesla Coils</h2>
+
+        <div style="height: 20px;"></div>
+
+        <p></p>
+
+        <div style="height: 20px;"></div>
+
+        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+        <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="America/Denver" data-textcolor="#ffffff" data-date="2025-04-16 10:00" data-background="#3cff00" data-digitscolor="#ffffff" data-unitscolor="#ffffff">World Championship</a>
+
+        <div style="height: 60px;"></div>
+
+        <h2>Announcements</h2>
+
+        <div style="height: 40px;"></div>
+
+        <img class="center" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/25camp.png" alt="Camps" width="400" height="800">
+
+        <footer>
+            <div class="hide-on-small">
+                <h5 class="footer-text">© 2011-2025 5026 Tesla Coils. All rights reserved</h5>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
+                </a>
+                <a href="mailto:5026teslacoils@gmail.com" target="_blank">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png?f=webp" alt="Gmail">
+                </a>
+                <a href="https://tr.ee/cAMC484Qrb" target="_blank">
+                    <img src="https://brandlogos.net/wp-content/uploads/2021/11/discord-logo-512x512.png" alt="Discord" style="width: 40px; height: auto;">
+                </a>
+                <a href="https://ftcscout.org/teams/5026" target="_blank">
+                    <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
+                </a>
+                <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
+                    <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/trevc.png" alt="Team Rev" style="width: 50px; height: auto;">
+                </a>
+                <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
+                    <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
+                </a>
+            </div>
+        </footer>
     </div>
-    
-    <nav class="sidebar" id="sidebar">
-        <a href="Home.html" id="Home" class="active">Home</a>
-        <a href="sponsors.html" id="sponsors">Sponsors</a>
-        <a href="meettheteam.html" id="meet">Meet the Team</a>
-        <a href="localteams.html" id="teams">Find Local Teams</a>
-        <a href="History.html" id="history">History</a>
-        <a href="Seasons.html" id="seasons">Seasons</a>
-        <a href="robots.html" id="robots">Robots</a>
-        <a href="camps.html" id="camps">Summer Camps</a>
-        <a href="Contact.html" id="contact">Contact</a>
-    </nav>
-    <!--5026 Logo-->
-    <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="300">
 
-    <!--Site Name-->
-    <h2>5026 Tesla Coils</h2>
-
-    <!--Divider-->
-    <div style="height: 20px;"></div> 
-
-    <p>Welcome to the New 5026 Tesla Coils Website, please be patient while we move our information over to this new site!</p>
-
-    <!--Divider-->
-    <div style="height: 20px;"></div> 
-
-    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-    <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="America/Denver" data-textcolor="#ffffff" data-date="2025-04-16 10:00" data-background="#3cff00" data-digitscolor="#ffffff" data-unitscolor="#ffffff">World Championship</a>
-
-    <div style="height: 60px;"></div>         
-
-    <h2>Announcements</h2>
-
-    <!--Divider-->
-    <div style="height: 40px;"></div> 
-
-    <img class="center" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/25camp.png" alt="Camps" width="400" heigh="800">
-
-    <!-- Footer Logos -->
-    <footer>
-        <div class="hide-on-small">
-        <h5 class="footer-text">© 2011-2025 5026 Tesla Coils. All rights reserved</h5>
-        </div>
-
-
-        <div class="social-icons">
-            <!-- Facebook Icon -->
-            <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-            </a>
-
-            <!-- Instagram Icon -->
-            <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
-            </a>
-
-            <!-- Gmail Icon -->
-            <a href="mailto:5026teslacoils@gmail.com" target="_blank">
-                <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png?f=webp" alt="Gmail" >
-            </a>
-
-            <!-- Discord Icon -->
-            <a href="https://tr.ee/cAMC484Qrb" target="_blank">
-                <img src="https://brandlogos.net/wp-content/uploads/2021/11/discord-logo-512x512.png" alt="Discord" style="width: 40px; height: auto;">
-            </a>
-
-            <!-- FTC Scout Icon -->
-            <a href="https://ftcscout.org/teams/5026" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
-            </a>
-
-            <!-- Team Rev Icon -->
-            <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/trevc.png" alt="Team Rev" style="width: 50px; height: auto;">
-            </a>
-
-            <!-- Github Icon -->
-            <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
-                <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
-            </a>
-
-        </div>
-    </footer>
-
+    <!-- Scripts -->
     <script>
         function toggleMenu() {
-            // trigger sidebar active
             document.getElementById('sidebar').classList.toggle('active');
-            
-            // animate the bar
-            const menuButton = document.querySelector('.menu-toggle');
-            menuButton.classList.toggle('open');
+            document.querySelector('.menu-toggle').classList.toggle('open');
         }
 
-         // Highlight the active or hovering
-         const currentPage = window.location.pathname.split("/").pop();
+        // Highlight current page in nav
+        const currentPage = window.location.pathname.split("/").pop();
         const navLinks = document.querySelectorAll(".sidebar a");
-
         navLinks.forEach(link => {
             if (link.href.includes(currentPage)) {
                 link.classList.add("active");
@@ -290,14 +268,14 @@
                 link.classList.remove("active");
             }
         });
-    </script> 
 
-</div>
+        // Dismiss banner
+        document.getElementById("close-banner").addEventListener("click", function () {
+            document.getElementById("announcement-banner").style.display = "none";
+        });
+    </script>
 
     <script src="preload.js"></script>
-    <script>
-        console.log("JavaScript is running!");
-    </script>
-    
+    <script>console.log("JavaScript is running!");</script>
 </body>
 </html>

@@ -46,3 +46,26 @@ body {
     display: block;
 }
 
+/* Announcement Bar */
+#announcement-banner {
+  background-color: #3cff00;
+  color: black;
+  padding: 20px 20px;
+  text-align: center;
+  font-family: 'BatmanForever', sans-serif;
+  position: relative;
+  z-index: 2000;
+}
+
+#announcement-banner button {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+
