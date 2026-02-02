@@ -5,52 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The robots of 5026 Tesla Coils, showcasing their features and accomplishments.">
     <title>5026 Tesla Coils - Robots</title>
-    <link rel="stylesheet" href="styles.css">
 
-     <!-- Favicon -->
-     <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
+    <!-- Favicon -->
+    <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
 
-     <!-- Declare Batman Forever -->
-     <style>
+    <style>
         @font-face {
             font-family: 'BatmanForever';
             src: url('https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/batmanf/batmfa__.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
         }
 
-        /* Apply BatmanF */
         body {
             font-family: 'BatmanForever', sans-serif;
             background-color: black;
-            text-align: center;
+            margin: 0;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
 
-        p, h2 {
+        h2, p {
             color: white;
         }
 
-        h2 {
-            font-size: 32px;
-        }
-
-        /* Center Coils Logo */
-        .logo {
-            display: block;
-            margin: 0 auto;
-        }
-
-         /* Sidebar styles */
-         .sidebar {
+        /* Sidebar + menu styles (unchanged) */
+        .sidebar {
             height: 100vh;
             width: 250px;
             position: fixed;
             top: 0;
             left: -250px;
-            background: #000000;
+            background: #000;
             padding-top: 60px;
             transition: 0.3s;
             z-index: 1000;
@@ -59,19 +44,22 @@
         .sidebar a {
             display: block;
             padding: 15px;
-            text-decoration: none;
             color: white;
-            font-size: 18px;
-            transition: 0.3s;
+            text-decoration: none;
         }
 
-        .sidebar a:hover, .sidebar a.active {
+        .sidebar a:hover,
+        .sidebar a.active {
             background-color: rgb(32, 255, 32);
             color: black;
         }
 
+        .sidebar.active {
+            left: 0;
+        }
+
         .menu-toggle {
-            position: absolute;
+            position: fixed;
             top: 15px;
             left: 15px;
             cursor: pointer;
@@ -83,30 +71,73 @@
             height: 4px;
             background: white;
             margin: 5px;
-            transition: 0.3s;
             border-radius: 5px;
         }
 
-        .menu-toggle.open div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+        /* ===== ROBOT SECTION ===== */
+
+        .robots-container {
+            max-width: 1200px;
+            margin: 80px auto 40px;
+            padding: 0 20px;
         }
 
-        .menu-toggle.open div:nth-child(2) {
-            opacity: 0;
+        .robot-card {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: #111;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 40px;
         }
 
-        .menu-toggle.open div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+        .robot-card img {
+            width: 320px;
+            max-width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
         }
 
-        .sidebar.active {
-            left: 0;
+        .robot-info {
+            text-align: left;
         }
 
-        /* Footer Styles */
+        .robot-info h2 {
+            margin-top: 0;
+            font-size: 30px;
+        }
+
+        .robot-info p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Alternate layout */
+        .robot-card:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .robot-card:nth-child(even) .robot-info {
+            text-align: right;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .robot-card,
+            .robot-card:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .robot-card:nth-child(even) .robot-info {
+                text-align: center;
+            }
+        }
+
         footer {
             background-color: #333;
-            color: white;
             padding: 20px;
             margin-top: auto;
         }
@@ -117,169 +148,166 @@
             gap: 20px;
         }
 
-        .social-icons a {
-            color: white;
-            font-size: 24px;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #ccc;
-        }
-
         .social-icons img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .footer-links {
-            margin-top: 20px;
-        }
-
-        .footer-links a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: #ccc;
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
+
 <body>
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+    <a href="Home.html">Home</a>
+    <a href="Sponsors.html">Sponsors</a>
+    <a href="meettheteam.html">Meet the Team</a>
+    <a href="localteams.html">Find Local Teams</a>
+    <a href="history.html">History</a>
+    <a href="Seasons.html">Seasons</a>
+    <a href="robots.html" class="active">Robots</a>
+    <a href="Contact.html">Contact</a>
+</nav>
+
+<div class="robots-container">
+
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Mis Abyss.png" alt="Mis Conduct">
+        <div class="robot-info">
+            <h2>Mis Abyss (2024–2025)</h2>
+            <p>
+                
+            </p>
+        </div>
     </div>
     
-    <nav class="sidebar" id="sidebar">
-        <a href="index.html" id="Home" class="active">Home</a>
-        <a href="Sponsors.html" id="sponsors">Sponsors</a>
-        <a href="meettheteam.html" id="meet">Meet the Team</a>
-        <a href="localteams.html" id="teams">Find Local Teams</a>
-        <a href="history.html" id="history">History</a>
-        <a href="Seasons.html" id="seasons">Seasons</a>
-        <a href="robots.html" id="robots">Robots</a>
-        <a href="Contact.html" id="contact">Contact</a>
-    </nav>
 
-    <div class="robot">
-        <h2>Mark V - Mis Conduct (2022-2023)</h2>
-        <img src="path_to_image.jpg" alt="Mis Conduct">
-        <p>Mis. Conduct was the Powerplay Robot in 2022-2023, helping us qualify for the World Championship and place 35th in the Ochoa Division.</p>
-    </div>
+     <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Mis Fortune.png" alt="Mis Conduct">
+        <div class="robot-info">
+            <h2>Mis Fortune (2023–2024)</h2>
+            <p>
+                Mis. Fortune is the 2023-2024 Centerstage Robot. During the Season She was a beast. She was the highest-scoring robot at Idaho State she went 5-0-0. She competed in the World Championship Placing 26th In Franklin Divison.
 
-    <div class="robot">
-        <h2>Forvo Jr. (2021-2022)</h2>
-        <img src="path_to_image.jpg" alt="Forvo Jr.">
-        <p>Forvo Jr. was named after our FLL Challenge team’s robot, built for the Freight Frenzy season.</p>
-    </div>
-
-    <div class="robot">
-        <h2>Scooter (2020-2021)</h2>
-        <img src="path_to_image.jpg" alt="Scooter">
-        <p>Scooter was our Ultimate Goal robot, featuring quick movements and strong scoring potential.</p>
-    </div>
-
-    <div class="robot">
-        <h2>Patricia (2019-2020)</h2>
-        <img src="path_to_image.jpg" alt="Patricia">
-        <p>Patricia was the Skystone robot, capable of efficient building and scoring strategies during the season.</p>
-    </div>
-
-    <div class="robot">
-        <h2>Mark IV - The Fortissimo</h2>
-        <img src="path_to_image.jpg" alt="Mark IV">
-        <p>Mark IV was an important milestone in our team's robot development, featuring cutting-edge design.</p>
-    </div>
-
-    <div class="robot">
-        <h2>Mark III</h2>
-        <img src="path_to_image.jpg" alt="Mark III">
-        <p>Mark III reached the 2013-2014 World Championship, finishing 3rd place and scoring high with its strong mechanisms.</p>
-    </div>
-
-    <div class="robot">
-        <h2>Brock</h2>
-        <img src="path_to_image.jpg" alt="Brock">
-        <p>Brock was a standout with its omni-directional drive and versatility in defense, reaching 9th place at the 2012-2013 World Championship.</p>
-    </div>
-
-    <div class="robot">
-        <h2>Miss Coils</h2>
-        <img src="path_to_image.jpg" alt="Miss Coils">
-        <p>Miss Coils was our first robot, capable of picking up balls and navigating the ramp efficiently. She placed 11th at the 2011-2012 World Championship.</p>
-    </div>
-
-   <!-- Footer Logos -->
-    <footer>
-        <div class="hide-on-small">
-        <h5 class="footer-text">© 2011-2025 5026 Tesla Coils. All rights reserved</h5>
+            </p>
         </div>
+    </div>
 
-
-        <div class="social-icons">
-            <!-- Facebook Icon -->
-            <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-            </a>
-
-            <!-- Instagram Icon -->
-            <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
-            </a>
-
-            <!-- Gmail Icon -->
-            <a href="mailto:5026teslacoils@gmail.com" target="_blank">
-                <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png?f=webp" alt="Gmail" >
-            </a>
-
-            <!-- Discord Icon -->
-            <a href="https://tr.ee/cAMC484Qrb" target="_blank">
-                <img src="https://brandlogos.net/wp-content/uploads/2021/11/discord-logo-512x512.png" alt="Discord">
-            </a>
-
-            <!-- FTC Scout Icon -->
-            <a href="https://ftcscout.org/teams/5026" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
-            </a>
-
-            <!-- Team Rev Icon -->
-            <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
-                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/trevc.png" alt="Team Rev" style="width: 50px; height: auto;">
-            </a>
-
-            <!-- Github Icon -->
-            <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
-                <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
-            </a>
-
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Mark V - Miss Conduct.png" alt="Mis Conduct">
+        <div class="robot-info">
+            <h2>Mark V – Mis Conduct (2022–2023)</h2>
+            <p>
+                Mis Conduct was the PowerPlay robot that helped us qualify for the World Championship
+                and place 35th in the Ochoa Division.
+            </p>
         </div>
-    </footer>
+    </div>
 
-    <script>
-        function toggleMenu() {
-            // trigger sidebar active
-            document.getElementById('sidebar').classList.toggle('active');
-            
-            // animate the bar
-            const menuButton = document.querySelector('.menu-toggle');
-            menuButton.classList.toggle('open');
-        }
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Forvo Jr..png" alt="Forvo Jr.">
+        <div class="robot-info">
+            <h2>Forvo Jr. (2021–2022)</h2>
+            <p>
+                Built for Freight Frenzy, Forvo Jr. was named after our FLL Challenge robot
+                and carried that legacy into FTC.
+            </p>
+        </div>
+    </div>
 
-         // Highlight the active or hovering
-         const currentPage = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll(".sidebar a");
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Scooter.png" alt="Scooter">
+        <div class="robot-info">
+            <h2>Scooter (2020–2021)</h2>
+            <p>
+                Scooter competed in Ultimate Goal, featuring fast movement
+                and reliable scoring mechanisms.
+            </p>
+        </div>
+    </div>
 
-        navLinks.forEach(link => {
-            if (link.href.includes(currentPage)) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    </script>
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Patricia.png" alt="Patricia">
+        <div class="robot-info">
+            <h2>Patricia (2019–2020)</h2>
+            <p>
+                Patricia was our Skystone robot, designed for efficient block
+                handling and strategic construction.
+            </p>
+        </div>
+    </div>
+
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Mark IV - The Fortissimo.png" alt="Mark IV">
+        <div class="robot-info">
+            <h2>Mark IV – The Fortissimo</h2>
+            <p>
+                Mark IV represented a major leap in design and performance,
+                showcasing advanced mechanisms and control.
+            </p>
+        </div>
+    </div>
+
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Mark III.png" alt="Mark III">
+        <div class="robot-info">
+            <h2>Mark III</h2>
+            <p>
+                Mark III reached the 2013–2014 World Championship,
+                finishing 3rd overall with high scoring potential.
+            </p>
+        </div>
+    </div>
+
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Brock.png" alt="Brock">
+        <div class="robot-info">
+            <h2>Brock</h2>
+            <p>
+                Brock featured an omni-directional drive and strong defense,
+                placing 9th at the 2012–2013 World Championship.
+            </p>
+        </div>
+    </div>
+
+    <div class="robot-card">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/Miss Coils.png" alt="Miss Coils">
+        <div class="robot-info">
+            <h2>Miss Coils</h2>
+            <p>
+                Our very first robot, Miss Coils could collect balls and
+                navigate the ramp, placing 11th at Worlds in 2011–2012.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
+        </a>
+        <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg">
+        </a>
+        <a href="mailto:5026teslacoils@gmail.com">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png">
+        </a>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('sidebar').classList.toggle('active');
+        document.querySelector('.menu-toggle').classList.toggle('open');
+    }
+</script>
+
 </body>
 </html>

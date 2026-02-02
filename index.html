@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Site summary at search-->
+
+    <!-- Site summary -->
     <meta name="description" content="We are a FIRST Tech Challenge team from Kimberly, Idaho, Est. 2012. We are the oldest FTC team in Idaho & our goal is to expand FIRST in our state!">
-    <!--Site Tite in Tab-->
+
     <title>5026 Tesla Coils</title>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="intro.css">
 
     <!-- Favicon -->
     <link rel="Icon" href="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" type="image/png">
 
-    <!-- Declare Batman Forever -->
     <style>
         @font-face {
             font-family: 'BatmanForever';
             src: url('https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/batmanf/batmfa__.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
         }
 
-        /* Apply BatmanF */
         body {
             font-family: 'BatmanForever', sans-serif;
             background-color: black;
@@ -30,22 +28,15 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            margin: 0;
         }
 
-        p, h2, h4 {
+        p, h2 {
             color: white;
         }
 
         h2 {
             font-size: 32px;
-        }
-
-        h4 {
-            font-size: 40px;
-        }
-
-        h5 {
-            font-size: 8px;
         }
 
         .logo {
@@ -58,13 +49,30 @@
             margin: 0 auto;
         }
 
+        /* ===== Image Card Style (matches Robots page) ===== */
+        .image-card {
+            background: #111;
+            border-radius: 18px;
+            padding: 25px;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        .image-card img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Sidebar styles */
         .sidebar {
             height: 100vh;
             width: 250px;
             position: fixed;
             top: 0;
             left: -250px;
-            background: #000000;
+            background: #000;
             padding-top: 60px;
             transition: 0.3s;
             z-index: 1000;
@@ -79,9 +87,14 @@
             transition: 0.3s;
         }
 
-        .sidebar a:hover, .sidebar a.active {
+        .sidebar a:hover,
+        .sidebar a.active {
             background-color: rgb(32, 255, 32);
             color: black;
+        }
+
+        .sidebar.active {
+            left: 0;
         }
 
         .menu-toggle {
@@ -97,8 +110,8 @@
             height: 4px;
             background: white;
             margin: 5px;
-            transition: 0.3s;
             border-radius: 5px;
+            transition: 0.3s;
         }
 
         .menu-toggle.open div:nth-child(1) {
@@ -113,13 +126,8 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .sidebar.active {
-            left: 0;
-        }
-
         footer {
             background-color: #333;
-            color: white;
             padding: 20px;
             margin-top: auto;
         }
@@ -130,152 +138,116 @@
             gap: 20px;
         }
 
-        .social-icons a {
-            color: white;
-            font-size: 24px;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #ccc;
-        }
-
         .social-icons img {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
-
-        .footer-links {
-            margin-top: 20px;
-        }
-
-        .footer-links a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: #ccc;
-        }
-
-        .left-align {
-            margin-right: 1200px;
-            width: 500;
-            margin-top: 30px;
-        }
-
-
     </style>
 </head>
+
 <body>
 
-   <!-- Dismissible Banner -->
-   <!--<div id="announcement-banner">
-        <span> Welcome to The New 5026 Tesla Coils Website — Summer Camp Registration is Open! </span>
-        <button id="close-banner">&times;</button>
-    </div>-->
+    <script src="app.js"></script>
 
-    <div id="preloader">
-        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/ITD.gif" alt="Loading...">
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
-    <div id="content">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+    <nav class="sidebar" id="sidebar">
+        <a href="Home.html" class="active">Home</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="meettheteam.html">Meet the Team</a>
+        <a href="localteams.html">Find Local Teams</a>
+        <a href="History.html">History</a>
+        <a href="Seasons.html">Seasons</a>
+        <a href="robots.html">Robots</a>
+        <a href="camps.html">Summer Camps</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+    <!-- Logo -->
+    <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="300">
+
+    <h2>5026 Tesla Coils</h2>
+
+    <div style="height: 20px;"></div>
+
+    <p>
+        Welcome to the New 5026 Tesla Coils Website, please be patient while we move
+        our information over to this new site!
+    </p>
+
+    <div style="height: 20px;"></div>
+
+    <!-- Countdown -->
+    <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+    <a href="https://logwork.com/countdown-timer"
+       class="countdown-timer"
+       data-style="circles"
+       data-timezone="America/Denver"
+       data-textcolor="#ffffff"
+       data-date="2026-04-29 10:00"
+       data-background="#3cff00"
+       data-digitscolor="#ffffff"
+       data-unitscolor="#ffffff">
+        2026 World Championship
+    </a>
+
+    <div style="height: 60px;"></div>
+
+    <h2>5026 Win Inspire at State Championship!</h2>
+
+    <div style="height: 40px;"></div>
+
+    <!-- Announcement Image Card -->
+    <div class="image-card center">
+        <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/2026TCINSP.png"
+             alt="Tesla Coils Win Inspire at State Championship"
+             width="400">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
+            </a>
+            <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg">
+            </a>
+            <a href="mailto:5026teslacoils@gmail.com">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png">
+            </a>
+            <a href="https://tr.ee/cAMC484Qrb" target="_blank">
+                <img src="https://brandlogos.net/wp-content/uploads/2021/11/discord-logo-512x512.png">
+            </a>
+            <a href="https://ftcscout.org/teams/5026" target="_blank">
+                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png">
+            </a>
+            <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
+                <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/tr.png">
+            </a>
+            <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
+                <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png">
+            </a>
         </div>
+    </footer>
 
-        <nav class="sidebar" id="sidebar">
-            <a href="index.html" id="Home" class="active">Home</a>
-            <a href="sponsors.html" id="sponsors">Sponsors</a>
-            <a href="meettheteam.html" id="meet">Meet the Team</a>
-            <a href="localteams.html" id="teams">Find Local Teams</a>
-            <a href="History.html" id="history">History</a>
-            <a href="Seasons.html" id="seasons">Seasons</a>
-            <a href="robots.html" id="robots">Robots</a>
-            <a href="camps.html" id="camps">Summer Camps</a>
-            <a href="Contact.html" id="contact">Contact</a>
-        </nav>
-
-        <img class="logo" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/5026.png" alt="Logo" width="300">
-
-        <h2>5026 Tesla Coils</h2>
-
-        <div style="height: 20px;"></div>
-
-        <p></p>
-
-        <div style="height: 20px;"></div>
-
-        <script src="https://cdn.logwork.com/widget/countdown.js"></script>
-        <a href="https://logwork.com/countdown-timer" class="countdown-timer" data-style="circles" data-timezone="America/Denver" data-textcolor="#ffffff" data-date="2025-04-16 10:00" data-background="#3cff00" data-digitscolor="#ffffff" data-unitscolor="#ffffff">World Championship</a>
-
-        <div style="height: 60px;"></div>
-
-        <h2>Announcements</h2>
-
-        <div style="height: 40px;"></div>
-
-        <img class="center" src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/25camp.png" alt="Camps" width="400" height="800">
-
-        <footer>
-            <div class="hide-on-small">
-                <h5 class="footer-text">© 2011-2025 5026 Tesla Coils. All rights reserved</h5>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://www.facebook.com/5026TeslaCoils/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-                </a>
-                <a href="https://www.instagram.com/5026_tesla_coils/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram">
-                </a>
-                <a href="mailto:5026teslacoils@gmail.com" target="_blank">
-                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-gmail-logo-icon-download-in-svg-png-gif-file-formats--mail-email-logos-icons-2416660.png?f=webp" alt="Gmail">
-                </a>
-                <a href="https://tr.ee/cAMC484Qrb" target="_blank">
-                    <img src="https://brandlogos.net/wp-content/uploads/2021/11/discord-logo-512x512.png" alt="Discord" style="width: 40px; height: auto;">
-                </a>
-                <a href="https://ftcscout.org/teams/5026" target="_blank">
-                    <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/scout.png" alt="FTC Scout">
-                </a>
-                <a href="https://www.revrobotics.com/team-sponsorship/" target="_blank">
-                    <img src="https://raw.githubusercontent.com/5026TeslaCoilsFTC/5026TeslaCoilsFTC.github.io/site/assets/trevc.png" alt="Team Rev" style="width: 50px; height: auto;">
-                </a>
-                <a href="https://github.com/5026TeslaCoilsFTC" target="_blank">
-                    <img src="https://icones.pro/wp-content/uploads/2021/06/icone-github-orange.png" alt="Github">
-                </a>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Scripts -->
     <script>
         function toggleMenu() {
             document.getElementById('sidebar').classList.toggle('active');
             document.querySelector('.menu-toggle').classList.toggle('open');
         }
 
-        // Highlight current page in nav
         const currentPage = window.location.pathname.split("/").pop();
-        const navLinks = document.querySelectorAll(".sidebar a");
-        navLinks.forEach(link => {
+        document.querySelectorAll(".sidebar a").forEach(link => {
             if (link.href.includes(currentPage)) {
                 link.classList.add("active");
-            } else {
-                link.classList.remove("active");
             }
-        });
-
-        // Dismiss banner
-        document.getElementById("close-banner").addEventListener("click", function () {
-            document.getElementById("announcement-banner").style.display = "none";
         });
     </script>
 
-    <script src="preload.js"></script>
-    <script>console.log("JavaScript is running!");</script>
 </body>
 </html>
