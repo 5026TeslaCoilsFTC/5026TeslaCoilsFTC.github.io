@@ -1,7 +1,71 @@
 body {
-
     margin: 0;
     background-color: black;
     text-align: center;
-    
+    position: relative; /* Required to position elements within the body */
 }
+
+.footer-text {
+    position: absolute;
+    bottom: 30px; /* Adjust as needed */
+    left: 10px;   /* Adjust as needed */
+    color: white;
+    font-size: 9px; /* Adjust size as needed */
+}
+
+.hide-on-small {
+    display: block; /* or whatever the default display is */
+}
+
+/* This will hide the element when the screen size is below 800px */
+@media screen and (max-width: 800px) {
+    .hide-on-small {
+        display: none;
+    }
+}
+
+/* Fullscreen Preloader */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#content {
+    display: block;
+}
+
+/* Announcement Bar */
+#announcement-banner {
+  background-color: #3cff00;
+  color: black;
+  padding: 20px 20px;
+  text-align: center;
+  font-family: 'BatmanForever', sans-serif;
+  position: relative;
+  z-index: 2000;
+}
+
+#announcement-banner button {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+
